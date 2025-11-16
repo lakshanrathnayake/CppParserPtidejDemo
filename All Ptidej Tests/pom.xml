@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.ptidej</groupId>
+		<artifactId>all-ptidej</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>net.ptidej.test</groupId>
+	<artifactId>ptidej.test.all</artifactId>
+	<name>All Ptidej Tests</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<compilerArgs>
+						<arg>-proc:none</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<!-- Must export/open some hidden packages -->
+					<argLine>
+						--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+						--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
+						--add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
+						--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+						--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+						--add-opens=java.base/java.util=ALL-UNNAMED
+					</argLine>
+					<!-- Excluded on purpose -->
+					<excludes>
+						<exclude>TestAllPtidej.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!-- Main dependencies -->
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.cpl</groupId>
+			<artifactId>cpl-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-statements</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-statements-creator-aol</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-statements-creator-classfile</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aol</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aol</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-csharp-v1</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-csharp-v1</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-csharp-v2</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-csharp-v2</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-classfile</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-classfile</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-eclipse</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-eclipse</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-eclipse-parser</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-eclipse-parser</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-cpp-antlr</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-cpp-antlr</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<!--
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-cpp-eclipse</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-cpp-eclipse</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+		-->
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-javac</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-javac</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-classfile</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-mse</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-mse</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-xmi</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-xmi</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.epi</groupId>
+			<artifactId>epi-core</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.epi</groupId>
+			<artifactId>epi-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-javac-parser</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-javafile-javac-parser</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.modec</groupId>
+			<artifactId>modec-solver</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.modec</groupId>
+			<artifactId>modec-solver</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-analyses</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-analyses</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-generator</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-generator</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-generator-pagerank</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-generator-pagerank</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-micro-pattern-analysis</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-micro-pattern-analysis</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-refactorings</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-refactorings</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.pom</groupId>
+			<artifactId>pom-core</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.pom</groupId>
+			<artifactId>pom-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-serialiser-db4o</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-serialiser-db4o</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-serialiser-jos</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-serialiser-jos</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.sad</groupId>
+			<artifactId>sad-core</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.sad</groupId>
+			<artifactId>sad-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.squad</groupId>
+			<artifactId>squad-core</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.squad</groupId>
+			<artifactId>squad-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-core</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-3</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-3</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-4</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-4</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-fingerprints</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.demima</groupId>
+			<artifactId>demima-solver-fingerprints</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<!--
+		These two last dependencies MUST COME LAST because 
+		they bring with them aspectjtools, which itself bring
+		with it an old version of SubMonitor, which leads to
+			java.lang.NoSuchMethodError: 'org.eclipse.core.runtime.SubMonitor
+		org.eclipse.core.runtime.SubMonitor.split(int)' 
+		-->
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aspectj</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aspectj</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>
