@@ -21,8 +21,8 @@ import padl.kernel.IMethodInvocation;
 import padl.kernel.exception.CreationException;
 import padl.kernel.impl.Factory;
 
-public class MethodInvocationMissingtest extends TestCase {
-	public MethodInvocationMissingtest(final String name) {
+public class MethodInvocationMissingTest extends TestCase {
+	public MethodInvocationMissingTest(final String name) {
 		super(name);
 
 	}
