@@ -347,7 +347,14 @@ class GeneratorHelper {
 			padlFunction = ((ICPPFactoryEclipse) CPPFactoryEclipse
 					.getInstance()).createGlobalFunction(id, name);
 			((IGlobalFunction) padlFunction).setReturnType(returnTypeName);
+		}
+		else {
+			padlFunction = null;
+			Utils.reportUnknownType(GeneratorHelper.class, "operation", id,
+					aCPPFunction.getClass());
+		}
 
+		if (padlFunction != null) {
 			padlFunction.setStatic(aCPPFunction.isStatic());
 
 			if (container instanceof IFirstClassEntity) {
@@ -366,11 +373,6 @@ class GeneratorHelper {
 			Utils.addStatementsToFunction(aBodyStatement, padlFunction);
 
 			container.addConstituent(padlFunction);
-		}
-		else {
-			padlFunction = null;
-			Utils.reportUnknownType(GeneratorHelper.class, "operation", id,
-					aCPPFunction.getClass());
 		}
 	}
 
