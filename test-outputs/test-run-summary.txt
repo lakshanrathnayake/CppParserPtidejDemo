@@ -1,0 +1,13 @@
+Test rerun summary generated on 2026-02-12
+
+File: test-outputs/TestCreatorCPPFileUsingEclipse.txt
+Status: Incomplete/No final Maven summary in this rerun log (execution reached test start and then hung)
+Last observed phase: Running padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse
+
+File: test-outputs/TestPADLJNI.txt
+Status: Incomplete/No final Maven summary in this rerun log (execution reached test start and then hung)
+Last observed phase: Running padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+
+File: test-outputs/QMOODMetricsTest.txt
+Status: BUILD SUCCESS
+Last observed phase: Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
