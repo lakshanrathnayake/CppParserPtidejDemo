@@ -471,7 +471,25 @@ public final class EclipseCPPParserCaller {
 						"Checking serialised model at: " + serialised.getAbsolutePath()
 							+ " exists=" + serialised.exists());
 				if (serialised.exists()) {
-					Common.readCodeLevelModel(aCodeLevelModel);
+					try {
+						Common.readCodeLevelModel(aCodeLevelModel);
+					}
+					catch (final RuntimeException serialisationReadFailure) {
+						// Large models may occasionally produce unreadable XML in
+						// transient runs. Fall back to direct launcher execution.
+						final String[] launcherArgs = new String[] {
+								Common.ARGUMENT_DIRECTORY_TARGET_CPP_FILES + "="
+										+ aRootDirectoryContainingCPPFiles,
+								Common.ARGUMENT_DIRECTORY_PTIDEJ_WORKSPACE + "="
+										+ pathToCurrentWorkspace };
+						final Object directResult = new Launcher().run(launcherArgs);
+						if (directResult instanceof ICodeLevelModel) {
+							((ICodeLevelModel) directResult).moveIn(aCodeLevelModel);
+						}
+						else {
+							throw serialisationReadFailure;
+						}
+					}
 				}
 				else {
 					// Last-resort fallback: invoke the launcher directly in-process.

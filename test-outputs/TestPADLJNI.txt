@@ -14,11 +14,11 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 1.2 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 460 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 18 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 17 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 3.8 kB/s)
 [INFO] 
 [INFO] --- resources:3.3.1:resources (default-resources) @ padl-jni-tests ---
 [INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL JNI Tests\src\main\resources
@@ -48,7 +48,7 @@ WARNING: java.lang.System::loadLibrary has been called by org.eclipse.core.inter
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 266.2 s -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 238.8 s -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -57,11 +57,6 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  04:35 min
-[INFO] Finished at: 2026-02-12T12:56:17+05:00
+[INFO] Total time:  04:16 min
+[INFO] Finished at: 2026-02-20T13:57:02+05:00
 [INFO] ------------------------------------------------------------------------
-
-===== PADLJNI RERUN SUMMARY =====
-finished_at: 2026-02-12T12:56:18+05:00
-exit_code: 0
-status: BUILD SUCCESS
