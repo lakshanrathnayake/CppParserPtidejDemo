@@ -1,8 +1,11 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
 
-set "JAVA_HOME=C:\Progra~1\Java\jdk-25"
-set "PATH=%JAVA_HOME%\bin;C:\apache-maven-3.9.8\bin;%PATH%"
+if not defined JAVA_HOME (
+  if exist "C:\Program Files\Java\jdk-25\bin\java.exe" set "JAVA_HOME=C:\Program Files\Java\jdk-25"
+  if not defined JAVA_HOME if exist "C:\Program Files\Java\jdk-22\bin\java.exe" set "JAVA_HOME=C:\Program Files\Java\jdk-22"
+)
+if defined JAVA_HOME set "PATH=%JAVA_HOME%\bin;%PATH%"
 
 for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "TS=%%i"
 set "ROOT=%~dp0"
