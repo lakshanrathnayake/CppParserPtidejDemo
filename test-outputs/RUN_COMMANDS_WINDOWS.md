@@ -45,6 +45,12 @@ cmd.exe /c tmp_run_qmood_rerun.cmd > test-outputs\QMOODMetricsTest.txt 2>&1
 cmd.exe /c tmp_run_cpp_module_full_tests.cmd
 ```
 
+This script now enforces:
+- JDK 25
+- `clean test`
+- single Surefire fork (`-DforkCount=1 -DreuseForks=false`)
+- one automatic rerun of flaky failures (`-Dsurefire.rerunFailingTestsCount=1`)
+
 With log file:
 ```bat
 cmd.exe /c tmp_run_cpp_module_full_tests_log.cmd

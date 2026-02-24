@@ -1,11 +1,12 @@
 @echo off
 setlocal
 set "ROOT=%~dp0"
-if not defined JAVA_HOME (
-  if exist "C:\Program Files\Java\jdk-25\bin\java.exe" set "JAVA_HOME=C:\Program Files\Java\jdk-25"
-  if not defined JAVA_HOME if exist "C:\Program Files\Java\jdk-22\bin\java.exe" set "JAVA_HOME=C:\Program Files\Java\jdk-22"
+set "JAVA_HOME=C:\Program Files\Java\jdk-25"
+if not exist "%JAVA_HOME%\bin\java.exe" (
+  echo [ERROR] JDK 25 not found at "%JAVA_HOME%".
+  exit /b 1
 )
-if defined JAVA_HOME set "PATH=%JAVA_HOME%\bin;%PATH%"
+set "PATH=%JAVA_HOME%\bin;%PATH%"
 cd /d "%ROOT%"
-call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE test
+call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -DforkCount=1 -DreuseForks=false -Dsurefire.rerunFailingTestsCount=1 clean test
 exit /b %errorlevel%
