@@ -37,7 +37,7 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.5.4</version>
 					<configuration>
-						<argLine>--add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
+						<argLine>-Xmx6g --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED</argLine>
 					</configuration>
 				</plugin>
 			</plugins>
