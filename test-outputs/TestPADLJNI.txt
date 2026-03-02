@@ -1,12 +1,7 @@
-WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:/C:/apache-maven-3.9.8/lib/jansi-2.4.1.jar)
-WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
-WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/apache-maven-3.9.8/lib/guava-33.2.1-jre.jar)
-WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
-WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] -------------------< net.ptidej.padl:padl-jni-tests >-------------------
@@ -14,14 +9,14 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 1.2 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 252 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 27 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 772 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 20 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 564 B/s)
 [INFO] 
 [INFO] --- resources:3.3.1:resources (default-resources) @ padl-jni-tests ---
-[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL JNI Tests\src\main\resources
+[INFO] skip non existing resourceDirectory C:\Users\H P\Desktop\latestchange\CppParserPtidejDemo\PADL JNI Tests\src\main\resources
 [INFO] 
 [INFO] --- compiler:3.13.0:compile (default-compile) @ padl-jni-tests ---
 [INFO] No sources to compile
@@ -40,23 +35,918 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 [INFO] -------------------------------------------------------
 [INFO] Running padl.creator.cppfile.eclipse.test.big.TestPADLJNI
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
-WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.eclipse.osgi.internal.url.MultiplexingFactory (file:/C:/Users/Ali%20Ammar/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.18.400/org.eclipse.osgi-3.18.400.jar)
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.eclipse.osgi.internal.url.MultiplexingFactory (file:/C:/Users/H%20P/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.18.400/org.eclipse.osgi-3.18.400.jar)
 WARNING: Please consider reporting this to the maintainers of class org.eclipse.osgi.internal.url.MultiplexingFactory
 WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
 WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::loadLibrary has been called by org.eclipse.core.internal.filesystem.local.unix.UnixFileNatives in an unnamed module (file:/H:/PROJECTS/Fiverr/CppParserPtidejDemo/PADL Creator C++ (Eclipse) Helper/Runtime Libraries/plugins/org.eclipse.core.filesystem_1.3.200.v20130115-145044.jar)
+WARNING: java.lang.System::loadLibrary has been called by org.eclipse.core.internal.filesystem.local.unix.UnixFileNatives in an unnamed module (file:/C:/Users/H P/Desktop/latestchange/CppParserPtidejDemo/PADL Creator C++ (Eclipse) Helper/Runtime Libraries/plugins/org.eclipse.core.filesystem_1.3.200.v20130115-145044.jar)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 412.1 s -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 163.5 s <<< FAILURE! -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIGlobalFunction.testGlobalFunction -- Time elapsed: 41.56 s <<< ERROR!
+java.lang.RuntimeException: 
+com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:521)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.JNIGlobalFunction.testGlobalFunction(JNIGlobalFunction.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:83)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:480)
+	... 23 more
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: padl.kernel.impl.Statement
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:131)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	... 85 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIMethodMissed.testNativeMethod -- Time elapsed: 32.09 s <<< ERROR!
+java.lang.RuntimeException: 
+com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:521)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.JNIMissedTestCase(PadlModelJNI.java:127)
+	at padl.creator.cppfile.eclipse.test.big.JNIMethodMissed.testNativeMethod(JNIMethodMissed.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:83)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:480)
+	... 25 more
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: padl.kernel.impl.Statement
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:131)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	... 87 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIModel.testModel -- Time elapsed: 33.89 s <<< ERROR!
+java.lang.RuntimeException: 
+com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:521)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.JNIModel.testModel(JNIModel.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:83)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:480)
+	... 24 more
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: padl.kernel.impl.Statement
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:131)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	... 86 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNINativeMethod.testNativeMethod -- Time elapsed: 28.53 s <<< ERROR!
+java.lang.RuntimeException: 
+com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:521)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.NBNatif(PadlModelJNI.java:169)
+	at padl.creator.cppfile.eclipse.test.big.JNINativeMethod.testNativeMethod(JNINativeMethod.java:13)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:83)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:480)
+	... 25 more
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: padl.kernel.impl.Statement
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:131)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	... 87 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNINativeMethodMissed.testJNI -- Time elapsed: 27.38 s <<< ERROR!
+java.lang.RuntimeException: 
+com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:521)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.NatifMissedTestCase(PadlModelJNI.java:101)
+	at padl.creator.cppfile.eclipse.test.big.JNINativeMethodMissed.testJNI(JNINativeMethodMissed.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshallField(AbstractReflectionConverter.java:499)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doUnmarshal(AbstractReflectionConverter.java:425)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:277)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:83)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:480)
+	... 25 more
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: padl.kernel.impl.Statement
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:131)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:117)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readCompleteItem(AbstractCollectionConverter.java:147)
+	at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(ArrayConverter.java:54)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+	... 87 more
+
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[ERROR] Errors: 
+[ERROR]   JNIGlobalFunction.testGlobalFunction:29 » Runtime com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+[ERROR]   JNIMethodMissed.testNativeMethod:14 » Runtime com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+[ERROR]   JNIModel.testModel:19 » Runtime com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+[ERROR]   JNINativeMethod.testNativeMethod:13 » Runtime com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+[ERROR]   JNINativeMethodMissed.testJNI:14 » Runtime com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : padl.kernel.impl.Statement
+class               : [Lpadl.kernel.IConstituent;
+required-type       : [Lpadl.kernel.IConstituent;
+converter-type      : com.thoughtworks.xstream.converters.collections.ArrayConverter
+line number         : 27
+class[1]            : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+required-type[1]    : padl.kernel.impl.GenericContainerOfInsertionOrderedConstituents
+converter-type[1]   : com.thoughtworks.xstream.converters.reflection.ReflectionConverter
+class[2]            : padl.cpp.kernel.impl.GlobalFunctionGhost
+required-type[2]    : padl.cpp.kernel.impl.GlobalFunctionGhost
+class[3]            : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+required-type[3]    : padl.kernel.impl.GenericContainerOfNaturallyOrderedConstituents
+class[4]            : padl.kernel.impl.PackageDefault
+required-type[4]    : padl.kernel.impl.PackageDefault
+class[5]            : padl.kernel.impl.CodeLevelModel
+required-type[5]    : padl.kernel.impl.CodeLevelModel
+version             : 1.4.20
+-------------------------------
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
+[INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  06:59 min
-[INFO] Finished at: 2026-02-23T04:15:27+05:00
+[INFO] Total time:  02:56 min
+[INFO] Finished at: 2026-03-02T18:08:33+05:30
 [INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project padl-jni-tests: 
+[ERROR] 
+[ERROR] See C:\Users\H P\Desktop\latestchange\CppParserPtidejDemo\PADL JNI Tests\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

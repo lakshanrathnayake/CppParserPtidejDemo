@@ -240,9 +240,14 @@ public final class EclipseCPPParserCaller {
 		final File preferredFramework =
 			new File(aPathToCurrentWorkspace + "PADL Creator C++ (Eclipse)/libs/org.eclipse.osgi_3.15.jar");
 		if (preferredFramework.isFile()) {
+			// final File target = new File(aPluginsDirectory, preferredFramework.getName());
+			// FileUtils.copyFile(preferredFramework, target);
+			// return target;
 			final File target = new File(aPluginsDirectory, preferredFramework.getName());
-			FileUtils.copyFile(preferredFramework, target);
-			return target;
+if (!target.exists() || target.length() != preferredFramework.length()) {
+    FileUtils.copyFile(preferredFramework, target);
+}
+return target;
 		}
 
 		final File fallbackFramework =
