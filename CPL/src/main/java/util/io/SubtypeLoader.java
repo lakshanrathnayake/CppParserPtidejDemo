@@ -95,30 +95,29 @@ public final class SubtypeLoader {
 		}
 	}
 
-	// aliiimaher 2026/02/10:
-	// I removed the logging part from the following method, which was not really useful,
-	// it was just printing the name of the file being loaded.
-	
 	// TODO: Make it private
 	public static ClassFile[] loadSubtypeFromFile(final String aSuperTypeName,
 			final String aFileName, final String aFileExtension) {
 
 		final List<ClassFile> aListOfClasses = new ArrayList<ClassFile>();
 		if (aFileName.endsWith(aFileExtension)) {
-			try {
-				final InputStream anInputStream = new FileInputStream(
-						aFileName);
+			ProxyConsole.getInstance().debugOutput()
+					.println(MultilingualManager.getString("LOADING_FROM",
+							SubtypeLoader.class, new Object[] { aFileName }));
+
+			// use try-with-resources so the InputStream is always closed, even
+			// when an exception occurs.  Log a clear message and print the full
+			// stack trace to help track down the underlying problem.
+			try (InputStream anInputStream = new FileInputStream(aFileName)) {
 				SubtypeLoader.loadSubtypeFromStream(aSuperTypeName,
-						aListOfClasses,
-						new NamedInputStream(aFileName, anInputStream));
-				anInputStream.close();
+					aListOfClasses,
+					new NamedInputStream(aFileName, anInputStream));
 			}
 			catch (final Exception e) {
-				ProxyConsole.getInstance().errorOutput().print(e);
 				ProxyConsole.getInstance().errorOutput()
-						.print(": Exception while reading file: ");
-				ProxyConsole.getInstance().errorOutput().println(aFileName);
-			}
+					.println("Exception while reading file: " + aFileName);
+				e.printStackTrace(ProxyConsole.getInstance().errorOutput());
+			} 
 		}
 
 		final ClassFile[] results = new ClassFile[aListOfClasses.size()];
@@ -127,64 +126,69 @@ public final class SubtypeLoader {
 	}
 
 	private static void loadSubtypeFromStream(final String aSuperTypeName,
-			final List<ClassFile> aListOfClasses,
-			final NamedInputStream aNamedInputStream) throws IOException {
+        final List<ClassFile> aListOfClasses,
+        final NamedInputStream aNamedInputStream) {
 
-		final InputStream inputStream0 = aNamedInputStream.getStream();
-		final ClassFile currentClass_CFPARSE = new ClassFile(inputStream0);
-		inputStream0.close();
+    ClassFile currentClass = null;
 
-		final InputStream inputStream1 = aNamedInputStream.getStream();
-		final ClassParser parser = new ClassParser(inputStream1, "");
-		final JavaClass javaClass = parser.parse();
-		final ClassFile currentClass_BCEL1 = CFParseBCELConvertorVisitor
-				.convertClassFile(javaClass);
-		/*
-		final ClassFile currentClass_BCEL2 = CFParseBCELConvertorAdhoc
-				.convertClassFile(javaClass);
-		inputStream1.close();
-		 */
+    // First try parsing with the original CFParse library.  If it fails (the
+    // constant pool tag 18 error is a common symptom), log and fall through to
+    // a BCEL-based parse.
+    try {
+        final InputStream inputStream0 = aNamedInputStream.getStream();
+        currentClass = new ClassFile(inputStream0);
+        inputStream0.close();
+    } catch (final Throwable t) {
+        ProxyConsole.getInstance().errorOutput()
+                .println("CFParse error for " + aNamedInputStream + ":");
+        t.printStackTrace(ProxyConsole.getInstance().errorOutput());
+        // leave currentClass null so BCEL will be used below
+    }
 
-		ClassFile currentClass;
-		/*
-		if (currentClass_CFPARSE.equals(currentClass_BCEL1)) {
-			currentClass = currentClass_BCEL1;
-		}
-		else if (currentClass_CFPARSE.equals(currentClass_BCEL2)) {
-			currentClass = currentClass_BCEL2;
-		}
-		else {
-			ProxyConsole.getInstance().debugOutput()
-					.print("(Beware that the classfile of ");
-			ProxyConsole.getInstance().debugOutput()
-					.print(currentClass_BCEL1.getName());
-			ProxyConsole.getInstance().debugOutput()
-					.println(" is incomplete!)");
-			currentClass = currentClass_CFPARSE;
-		}
-		*/
+    // Always build a BCEL representation; it might be used as fallback or
+    // just to verify the CFParse result.
+    ClassFile currentClass_BCEL = null;
+    try {
+        final InputStream inputStream1 = aNamedInputStream.getStream();
+        final ClassParser parser = new ClassParser(inputStream1, "");
+        final JavaClass javaClass = parser.parse();
+        currentClass_BCEL = CFParseBCELConvertorVisitor
+                .convertClassFile(javaClass);
+        inputStream1.close();
+    } catch (final Throwable t) {
+        ProxyConsole.getInstance().errorOutput()
+                .println("BCEL parse error for " + aNamedInputStream + ":");
+        t.printStackTrace(ProxyConsole.getInstance().errorOutput());
+        // nothing more we can do
+    }
 
-		// Force the use of CFParse for the moment...
-		currentClass = currentClass_CFPARSE;
-		if (aSuperTypeName == null
-				|| currentClass.getSuperName().equals(aSuperTypeName)) {
+    if (currentClass == null) {
+        currentClass = currentClass_BCEL;
+    }
 
-			aListOfClasses.add(currentClass);
-		}
-		else {
-			boolean isSuperInterfaceFound = false;
-			for (int i = 0; i < currentClass.getInterfaces().length()
-					&& !isSuperInterfaceFound; i++) {
+    if (currentClass == null) {
+        // both parsers failed; skip this entry silently after having logged
+        return;
+    }
 
-				if (currentClass.getInterfaces().get(i)
-						.equals(aSuperTypeName)) {
-					aListOfClasses.add(currentClass);
-					isSuperInterfaceFound = true;
-				}
-			}
-		}
-	}
+    // previous logic for determining subtype membership
+    if (aSuperTypeName == null
+            || currentClass.getSuperName().equals(aSuperTypeName)) {
 
+        aListOfClasses.add(currentClass);
+    } else {
+        boolean isSuperInterfaceFound = false;
+        for (int i = 0; i < currentClass.getInterfaces().length()
+                && !isSuperInterfaceFound; i++) {
+
+            if (currentClass.getInterfaces().get(i)
+                    .equals(aSuperTypeName)) {
+                aListOfClasses.add(currentClass);
+                isSuperInterfaceFound = true;
+            }
+        }
+    }
+}
 	public static ClassFile[] loadSubtypesFromDir(final String aSuperTypeName,
 			final String aDirectoryName, final String aFileExtension) {
 
@@ -362,9 +366,6 @@ public final class SubtypeLoader {
 		}
 	}
 
-	// aliiimaher 2026/02/10:
-	// I removed the logging part from the following method, which was not really useful,
-	// it was just printing the name of the file being loaded.
 	public static ClassFile[] loadSubtypesFromStreams(
 			final String aSuperTypeName,
 			final NamedInputStream[] someNamedInputStreams,
@@ -397,17 +398,13 @@ public final class SubtypeLoader {
 					&& someNamedInputStreams[i].getName()
 							.indexOf(aDirectoryName) > -1) {
 
-				try {
-					SubtypeLoader.loadSubtypeFromStream(aSuperTypeName,
-							aListOfClasses, someNamedInputStreams[i]);
-				}
-				catch (final IOException e) {
-					ProxyConsole.getInstance().errorOutput().print(e);
-					ProxyConsole.getInstance().errorOutput()
-							.print(": Exception while reading file: ");
-					ProxyConsole.getInstance().errorOutput()
-							.println(someNamedInputStreams[i]);
-				}
+				ProxyConsole.getInstance().debugOutput()
+						.println(MultilingualManager.getString("LOADING_FROM",
+								SubtypeLoader.class, new Object[] {
+										someNamedInputStreams[i].getName() }));
+				// parsing errors are handled inside the helper; just invoke it
+				SubtypeLoader.loadSubtypeFromStream(aSuperTypeName,
+						aListOfClasses, someNamedInputStreams[i]);
 			}
 		}
 
