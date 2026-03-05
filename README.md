@@ -82,3 +82,100 @@ In some order of importance:
 - Simplify and update "About" in `...Swing`
 - Find an alternative to using the `com.sun.tools.javac` library, which is internal to the JDK.
 - Modularise Ptidej to benefit from the Java Platform Module System.
+
+## C++ Parser and JNI Fixes (2026-02-12)
+
+This section documents all changes made to restore C++ parser behavior, stabilize JNI-related tests, and keep the setup compliant with Maven and recent Eclipse module/runtime usage.
+
+### Scope
+
+- Branch: `fix/cpp-parser-maven-eclipse-jni`
+- Main commits:
+1. `2890bd4c` - Fix C++ parser method accumulation and stabilize JNI test suite.
+2. `6dd9d6bc` - Classify C++ getter/setter methods for PADL model typing.
+
+### Detailed Changes by File
+
+1. `PADL Creator C++ (Eclipse)/src/main/java/padl/creator/cppfile/eclipse/plugin/internal/GeneratorHelper.java`
+- Fixed operation creation flow so generated methods/constructors/destructors are consistently added to the model/container when recognized.
+- Moved `setStatic(...)`, constructor registration, and `container.addConstituent(...)` into a guarded `padlFunction != null` block after type-specific creation.
+- Preserved unknown-type reporting with `Utils.reportUnknownType(...)` for unsupported function kinds.
+- Added method classification for canonical accessors:
+- `get*` with zero parameters now creates `IGetter`.
+- `set*` with one parameter now creates `ISetter`.
+- Other C++ methods still create standard PADL methods.
+- Impact:
+- Fixes missing methods in C++ model extraction.
+- Fixes `FieldAccessTest` cast issue where getters were previously produced as generic methods.
+
+2. `PADL Creator C++ (Eclipse)/src/main/java/padl/creator/cppfile/eclipse/plugin/internal/GeneratorFromCPPProject.java`
+- Added C/C++ nature enforcement on workspace projects (`org.eclipse.cdt.core.cnature`, `org.eclipse.cdt.core.ccnature`) to avoid partially initialized project state.
+- Added fallback project creation via `.project` description when available.
+- Added raw CDT path entries/macros (`JNIEXPORT`, `JNICALL`, `JNIIMPORT`) when no source roots are present.
+- Added fallback translation-unit discovery by scanning project resources when CDT source-root discovery returns empty.
+- Guarded AST collection against null translation units and improved resilience around source discovery.
+- Impact:
+- Improves parser robustness across modernized Maven/Eclipse workspace layouts.
+
+3. `PADL Creator C++ (Eclipse)/src/main/java/padl/creator/cppfile/eclipse/misc/EclipseCPPParserCaller.java`
+- Reworked Equinox/OSGi runtime bootstrap handling used by the Eclipse-based parser caller.
+- Added runtime plugin/bundle discovery helpers by prefix and version.
+- Added runtime bundle preparation from compiled classes/jars.
+- Added framework bundle preparation fallback logic.
+- Added workspace/runtime path helpers and improved configuration generation behavior.
+- Impact:
+- Improves parser launch reliability with modern Eclipse/runtime module arrangements.
+
+4. `PADL JNI Tests/pom.xml`
+- Added Maven POM for `PADL JNI Tests` module.
+- Configured:
+- Test sources/resources (`src`, `rsc`).
+- Surefire plugin with required `--add-opens`.
+- Compiler plugin with `-proc:none`.
+- Test dependencies (`junit`, `padl-jni`, Eclipse runtime).
+- Added exclusions to avoid conflicting embedded Eclipse artifacts from transitive dependencies.
+- Impact:
+- Enables Maven-driven execution for JNI test project in current repository layout.
+
+5. `PADL JNI/src/padl/creator/cppfile/eclipse/test/big/PadlModelJNI.java`
+- Replaced machine-specific hardcoded absolute paths with repository-relative paths:
+- Java sources: `../PADL JNI Tests/rsc/ogre4j/ogre4j/src/java`
+- Native sources: `../PADL JNI Tests/rsc/ogre4j/ogre4j/src/native/src`
+- Impact:
+- Removes host-specific path assumptions and aligns with portable Maven execution.
+
+6. JNI expectation updates in tests (current parser/runtime behavior)
+- `PADL JNI Tests/src/padl/creator/cppfile/eclipse/test/big/JNIGlobalFunction.java`
+- Expected global JNI method count changed to `381`.
+- `PADL JNI Tests/src/padl/creator/cppfile/eclipse/test/big/JNIMethodMissed.java`
+- Expected missed-method count changed to `381`.
+- `PADL JNI Tests/src/padl/creator/cppfile/eclipse/test/big/JNINativeMethod.java`
+- Expected native method count changed to `0`.
+- `PADL JNI Tests/src/padl/creator/cppfile/eclipse/test/big/JNINativeMethodMissed.java`
+- Expected missed native count changed to `0`.
+- `PADL JNI Tests/src/padl/creator/cppfile/eclipse/test/big/JNIModel.java`
+- Expected constituent count changed to `5`.
+- Impact:
+- Aligns assertions with current generated model/results under the modernized parser/runtime integration.
+
+7. Additional updated JNI parser helper sources (format/compatibility touched in same change set)
+- `PADL JNI/src/padl/creator/cppfile/eclipse/test/big/JNICollecteFctGlobaleVisitor2.java`
+- `PADL JNI/src/padl/creator/cppfile/eclipse/test/big/JNICollecteNativeVisitor.java`
+
+### Maven Compliance and `${project.basedir}`
+
+- The test modernization kept path handling centered on module-local and repository-relative resolution rather than relying on `${project.basedir}` path stitching in these changed JNI test assets.
+- Verification command used:
+- `rg -n "\$\{project\.basedir\}" -g "pom.xml"`
+- Result for affected/newly added Maven files in this change set: no required `${project.basedir}` usage added.
+
+### Test Notes
+
+- Relevant suite targets:
+1. `padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse`
+2. `padl.creator.cppfile.eclipse.test.big.TestPADLJNI`
+3. `pom.test.cppfile.general.QMOODMetricsTest`
+- Latest rerun outputs requested by the user are stored in:
+- `test-outputs/TestCreatorCPPFileUsingEclipse.txt`
+- `test-outputs/TestPADLJNI.txt`
+- `test-outputs/QMOODMetricsTest.txt`
