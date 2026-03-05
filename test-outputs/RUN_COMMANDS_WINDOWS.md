@@ -67,7 +67,18 @@ mvn -f "pom.xml" install
 
 Note: this runs every module test and can fail for unrelated suites outside the C++ headless path.
 
-## 5) Quick Diagnostics if a Command Fails
+## 5) Build and Launch DeMIMA Swing UI
+
+```bat
+run_demima_ui.cmd
+```
+
+What it does:
+- Builds `DeMIMA UI Viewer Standalone Swing` with dependencies (`package`, tests skipped)
+- Launches:
+`DeMIMA UI Viewer Standalone Swing\\target\\demima-ui-viewer-swing-1.0.0-jar-with-dependencies.jar`
+
+## 6) Quick Diagnostics if a Command Fails
 
 1. Check Maven is found:
 ```bat
