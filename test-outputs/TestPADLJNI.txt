@@ -14,11 +14,11 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 1.2 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 2.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 5.6 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 3.8 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 26 kB/s)
 [INFO] 
 [INFO] --- resources:3.3.1:resources (default-resources) @ padl-jni-tests ---
 [INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL JNI Tests\src\main\resources
@@ -43,12 +43,7 @@ WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.eclipse.osgi.internal.url.MultiplexingFactory (file:/C:/Users/Ali%20Ammar/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.18.400/org.eclipse.osgi-3.18.400.jar)
 WARNING: Please consider reporting this to the maintainers of class org.eclipse.osgi.internal.url.MultiplexingFactory
 WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
-WARNING: A restricted method in java.lang.System has been called
-WARNING: java.lang.System::loadLibrary has been called by org.eclipse.core.internal.filesystem.local.unix.UnixFileNatives in an unnamed module (file:/H:/PROJECTS/Fiverr/CppParserPtidejDemo/PADL Creator C++ (Eclipse) Helper/Runtime Libraries/plugins/org.eclipse.core.filesystem_1.3.200.v20130115-145044.jar)
-WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 277.4 s -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 135.7 s -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -57,6 +52,6 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  04:44 min
-[INFO] Finished at: 2026-02-25T03:25:19+05:00
+[INFO] Total time:  02:20 min
+[INFO] Finished at: 2026-03-06T04:41:42+05:00
 [INFO] ------------------------------------------------------------------------

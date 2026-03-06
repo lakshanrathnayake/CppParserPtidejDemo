@@ -1,5 +1,20 @@
 ﻿# C++ Parser (Eclipse) Headless Guide
 
+## Current Branch Reality (latest rerun: 2026-03-06)
+The current `AA/main` state in this workspace is not fully green for the three required suites.
+
+- `TestCreatorCPPFileUsingEclipse`: **FAIL**
+  - Evidence: `PADL Creator C++ (Eclipse)/target/surefire-reports/TEST-padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse.xml`
+  - Latest XML summary: `tests="14" errors="2" failures="0"`
+  - Main error pattern: XStream `ConversionException` while reading serialized model (e.g., `ChromeTest`).
+- `TestPADLJNI`: **FAIL**
+  - Evidence: `test-outputs/TestPADLJNI.txt`
+  - Latest summary: `Tests run: 5, Failures: 0, Errors: 5`
+  - Main error pattern: XStream `UnknownFieldException` on `padl.cpp.kernel.impl.GlobalFunctionGhost`.
+- `QMOODMetricsTest`: **PASS**
+  - Evidence: `test-outputs/QMOODMetricsTest.txt`
+  - Latest summary: `Tests run: 1, Failures: 0, Errors: 0, Skipped: 0`
+
 ## 1) Why your command failed
 You ran:
 
@@ -118,14 +133,12 @@ Additional earlier artifacts:
 
 ## 5) Final validated status
 
-Validated full-module pass:
-```bat
-mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am test
-```
+Historical runs in previous snapshots showed full green states, but the **current branch state** does not.
 
-Observed result after corrections:
-1. `Tests run: 32, Failures: 0, Errors: 0, Skipped: 0`
-2. `BUILD SUCCESS`
+Current rerun status:
+1. `TestCreatorCPPFileUsingEclipse`: FAIL (`errors=2`)
+2. `TestPADLJNI`: FAIL (`errors=5`)
+3. `QMOODMetricsTest`: PASS
 
 ---
 

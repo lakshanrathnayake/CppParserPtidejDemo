@@ -11,8 +11,8 @@ cd /d "%ROOT%"
 if exist "PADL Creator C++ (Eclipse) Helper\Runtime Libraries\configuration\org.eclipse.osgi" (
   rmdir /s /q "PADL Creator C++ (Eclipse) Helper\Runtime Libraries\configuration\org.eclipse.osgi"
 )
-call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -Dtest=padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse -Dsurefire.failIfNoSpecifiedTests=false -DforkCount=1 -DreuseForks=false -Dsurefire.rerunFailingTestsCount=1 clean test
+call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -Dtest=padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse -Dsurefire.failIfNoSpecifiedTests=false -DforkCount=1 -DreuseForks=false -Dsurefire.rerunFailingTestsCount=1 test
 if not "%errorlevel%"=="0" (
-  call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -Dtest=padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse -Dsurefire.failIfNoSpecifiedTests=false -DforkCount=1 -DreuseForks=false clean test
+  call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -Dtest=padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse -Dsurefire.failIfNoSpecifiedTests=false -DforkCount=1 -DreuseForks=false test
 )
 exit /b %errorlevel%

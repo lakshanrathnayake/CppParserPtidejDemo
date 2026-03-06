@@ -1,0 +1,19 @@
+Stability check date: 2026-03-06 (Asia/Karachi)
+
+Run 1 exit codes:
+- TestCreatorCPPFileUsingEclipse: 124 (timeout/hang; did not complete)
+- TestPADLJNI: 1 (failed)
+- QMOODMetricsTest: 0 (passed)
+
+Evidence files:
+- test-outputs/stability/run1_TestCreatorCPPFileUsingEclipse.txt
+  - Last observable line: Running padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse
+- test-outputs/stability/run1_TestPADLJNI.txt
+  - Tests run: 5, Failures: 0, Errors: 5
+  - Error type: XStream UnknownFieldException (GlobalFunctionGhost / Constituent field mismatch)
+- test-outputs/stability/run1_QMOODMetricsTest.txt
+  - Tests run: 1, Failures: 0, Errors: 0
+  - BUILD SUCCESS
+
+Conclusion:
+Not every run is successful in current state.

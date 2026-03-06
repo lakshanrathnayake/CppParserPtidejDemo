@@ -8,5 +8,5 @@ if not exist "%JAVA_HOME%\bin\java.exe" (
 )
 set "PATH=%JAVA_HOME%\bin;%PATH%"
 cd /d "%ROOT%"
-call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -DforkCount=1 -DreuseForks=false -Dsurefire.rerunFailingTestsCount=1 clean test
+call mvn -f "pom.xml" -pl "PADL Creator C++ (Eclipse)" -am -Dmaven.plugin.validation=NONE -DforkCount=1 -DreuseForks=false -Dsurefire.rerunFailingTestsCount=1 test
 exit /b %errorlevel%

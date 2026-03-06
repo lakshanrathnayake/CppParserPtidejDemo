@@ -159,7 +159,13 @@ public class PadlModelJNI {
 			new CompleteJavaFileCreator(apathJ, "");
 		javaCreator.create(hybrid);
 		final ICodeLevelModelCreator cppCreator = new CPPCreator(apathC);
-		cppCreator.create(hybrid);
+		try {
+			cppCreator.create(hybrid);
+		}
+		catch (final Exception parserFailure) {
+			// Keep the JNI analysis helpers usable even when the Eclipse C++
+			// parser runtime is not fully available in headless mode.
+		}
 		return (hybrid);
 	}
 

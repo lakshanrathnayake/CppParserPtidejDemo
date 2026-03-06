@@ -1,0 +1,299 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< net.ptidej.padl:padl-jni-tests >-------------------
+[INFO] Building PADL JNI Tests 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 1.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.5 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 23 kB/s)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ padl-jni-tests ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL JNI Tests\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ padl-jni-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ padl-jni-tests ---
+[INFO] Copying 311 resources from rsc to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ padl-jni-tests ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ padl-jni-tests ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 160.1 s <<< FAILURE! -- in padl.creator.cppfile.eclipse.test.big.TestPADLJNI
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIGlobalFunction.testGlobalFunction -- Time elapsed: 38.79 s <<< ERROR!
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException: 
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:498)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.JNIGlobalFunction.testGlobalFunction(JNIGlobalFunction.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:124)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:141)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.move(AbstractPullReader.java:118)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown(AbstractPullReader.java:103)
+	at com.thoughtworks.xstream.io.xml.XppReader.<init>(XppReader.java:63)
+	at com.thoughtworks.xstream.io.xml.AbstractXppDriver.createReader(AbstractXppDriver.java:54)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModelUsingXStream(Common.java:109)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:181)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:486)
+	... 23 more
+Caused by: org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before start tag and not \ufffd (position: START_DOCUMENT seen \ufffd... @1:2) 
+	at io.github.xstream.mxparser.MXParser.parseProlog(MXParser.java:1528)
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1406)
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104)
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109)
+	... 33 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIMethodMissed.testNativeMethod -- Time elapsed: 30.27 s <<< ERROR!
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException: 
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:498)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.JNIMissedTestCase(PadlModelJNI.java:127)
+	at padl.creator.cppfile.eclipse.test.big.JNIMethodMissed.testNativeMethod(JNIMethodMissed.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:124)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:141)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.move(AbstractPullReader.java:118)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown(AbstractPullReader.java:103)
+	at com.thoughtworks.xstream.io.xml.XppReader.<init>(XppReader.java:63)
+	at com.thoughtworks.xstream.io.xml.AbstractXppDriver.createReader(AbstractXppDriver.java:54)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModelUsingXStream(Common.java:109)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:181)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:486)
+	... 25 more
+Caused by: org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before start tag and not \ufffd (position: START_DOCUMENT seen \ufffd... @1:2) 
+	at io.github.xstream.mxparser.MXParser.parseProlog(MXParser.java:1528)
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1406)
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104)
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109)
+	... 35 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNIModel.testModel -- Time elapsed: 28.77 s <<< ERROR!
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException: 
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:498)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.JNIModel.testModel(JNIModel.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:124)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:141)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.move(AbstractPullReader.java:118)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown(AbstractPullReader.java:103)
+	at com.thoughtworks.xstream.io.xml.XppReader.<init>(XppReader.java:63)
+	at com.thoughtworks.xstream.io.xml.AbstractXppDriver.createReader(AbstractXppDriver.java:54)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModelUsingXStream(Common.java:109)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:181)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:486)
+	... 24 more
+Caused by: org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before start tag and not \ufffd (position: START_DOCUMENT seen \ufffd... @1:2) 
+	at io.github.xstream.mxparser.MXParser.parseProlog(MXParser.java:1528)
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1406)
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104)
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109)
+	... 34 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNINativeMethod.testNativeMethod -- Time elapsed: 31.84 s <<< ERROR!
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException: 
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:498)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.NBNatif(PadlModelJNI.java:169)
+	at padl.creator.cppfile.eclipse.test.big.JNINativeMethod.testNativeMethod(JNINativeMethod.java:13)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:124)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:141)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.move(AbstractPullReader.java:118)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown(AbstractPullReader.java:103)
+	at com.thoughtworks.xstream.io.xml.XppReader.<init>(XppReader.java:63)
+	at com.thoughtworks.xstream.io.xml.AbstractXppDriver.createReader(AbstractXppDriver.java:54)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModelUsingXStream(Common.java:109)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:181)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:486)
+	... 25 more
+Caused by: org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before start tag and not \ufffd (position: START_DOCUMENT seen \ufffd... @1:2) 
+	at io.github.xstream.mxparser.MXParser.parseProlog(MXParser.java:1528)
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1406)
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104)
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109)
+	... 35 more
+
+[ERROR] padl.creator.cppfile.eclipse.test.big.JNINativeMethodMissed.testJNI -- Time elapsed: 30.33 s <<< ERROR!
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException: 
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:498)
+	at padl.creator.cppfile.eclipse.CPPCreator.create(CPPCreator.java:29)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.CreateModelTestCase(PadlModelJNI.java:162)
+	at padl.creator.cppfile.eclipse.test.big.PadlModelJNI.NatifMissedTestCase(PadlModelJNI.java:101)
+	at padl.creator.cppfile.eclipse.test.big.JNINativeMethodMissed.testJNI(JNINativeMethodMissed.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:124)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:141)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.move(AbstractPullReader.java:118)
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.moveDown(AbstractPullReader.java:103)
+	at com.thoughtworks.xstream.io.xml.XppReader.<init>(XppReader.java:63)
+	at com.thoughtworks.xstream.io.xml.AbstractXppDriver.createReader(AbstractXppDriver.java:54)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1374)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModelUsingXStream(Common.java:109)
+	at padl.creator.cppfile.eclipse.Common.readCodeLevelModel(Common.java:181)
+	at padl.creator.cppfile.eclipse.misc.EclipseCPPParserCaller.createCodeLevelModelUsingOSGiEmbedded(EclipseCPPParserCaller.java:486)
+	... 25 more
+Caused by: org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before start tag and not \ufffd (position: START_DOCUMENT seen \ufffd... @1:2) 
+	at io.github.xstream.mxparser.MXParser.parseProlog(MXParser.java:1528)
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1406)
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104)
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109)
+	... 35 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   JNIGlobalFunction.testGlobalFunction:29 » Runtime com.thoughtworks.xstream.io.StreamException: 
+[ERROR]   JNIMethodMissed.testNativeMethod:14 » Runtime com.thoughtworks.xstream.io.StreamException: 
+[ERROR]   JNIModel.testModel:19 » Runtime com.thoughtworks.xstream.io.StreamException: 
+[ERROR]   JNINativeMethod.testNativeMethod:13 » Runtime com.thoughtworks.xstream.io.StreamException: 
+[ERROR]   JNINativeMethodMissed.testJNI:14 » Runtime com.thoughtworks.xstream.io.StreamException: 
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 5, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:46 min
+[INFO] Finished at: 2026-03-06T04:17:30+05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project padl-jni-tests: 
+[ERROR] 
+[ERROR] See H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL JNI Tests\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

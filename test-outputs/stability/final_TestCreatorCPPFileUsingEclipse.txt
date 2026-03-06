@@ -1,0 +1,192 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for net.ptidej.padl:padl-creator-javafile-javac:jar:1.0.0
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-surefire-plugin @ line 44, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Ptidej Tool Suite                                                  [pom]
+[INFO] CPL                                                                [jar]
+[INFO] PADL                                                               [jar]
+[INFO] PADL Statements                                                    [jar]
+[INFO] PADL Creator CPP Eclipse                                           [jar]
+[INFO] 
+[INFO] -----------------------< net.ptidej:all-ptidej >------------------------
+[INFO] Building Ptidej Tool Suite 1.0.0                                   [1/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------------< net.ptidej.cpl:cpl-core >-----------------------
+[INFO] Building CPL 1.0.0                                                 [2/5]
+[INFO]   from CPL\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-cfparse) @ cpl-core ---
+[INFO] pom.xml not found in cfparse.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\CPL\src\main\resources\cfparse.jar to C:\Users\Ali Ammar\.m2\repository\com\ibm\toad\cfparse\1.0\cfparse-1.0.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall13209636037416920667.pom to C:\Users\Ali Ammar\.m2\repository\com\ibm\toad\cfparse\1.0\cfparse-1.0.pom
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cpl-core ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ cpl-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cpl-core ---
+[INFO] Copying 18 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ cpl-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ cpl-core ---
+[INFO] 
+[INFO] ---------------------< net.ptidej.padl:padl-core >----------------------
+[INFO] Building PADL 1.0.0                                                [3/5]
+[INFO]   from PADL\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ padl-core ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ padl-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ padl-core ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ padl-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ padl-core ---
+[INFO] 
+[INFO] ------------------< net.ptidej.padl:padl-statements >-------------------
+[INFO] Building PADL Statements 1.0.0                                     [4/5]
+[INFO]   from PADL Statements\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ padl-statements ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Statements\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ padl-statements ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ padl-statements ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Statements\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ padl-statements ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ padl-statements ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --------------< net.ptidej.padl:padl-creator-cpp-eclipse >--------------
+[INFO] Building PADL Creator CPP Eclipse 1.0.0                            [5/5]
+[INFO]   from PADL Creator C++ (Eclipse)\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-osgi-3.15) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.osgi_3.15.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.osgi_3.15.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse\osgi\3.15\osgi-3.15.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall7440484888328802952.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse\osgi\3.15\osgi-3.15.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-osgi-services-3.8) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.osgi.services_3.8.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.osgi.services_3.8.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-osgi\services\3.8\services-3.8.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall13627837505293504032.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-osgi\services\3.8\services-3.8.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-cdt-core-5.4) @ padl-creator-cpp-eclipse ---
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.cdt.core_5.4.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt\core\5.4\core-5.4.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall3967355466897676802.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt\core\5.4\core-5.4.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-cdt-core-win32-5.3) @ padl-creator-cpp-eclipse ---
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.cdt.core.win32_5.3.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-core\win32\5.3\win32-5.3.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall8485055543249548770.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-core\win32\5.3\win32-5.3.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-cdt-make-core-7.2) @ padl-creator-cpp-eclipse ---
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.cdt.make.core_7.2.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-make\core\7.2\core-7.2.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall17166690063565479849.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-make\core\7.2\core-7.2.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-cdt-managedbuilder-core-8.1) @ padl-creator-cpp-eclipse ---
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.cdt.managedbuilder.core_8.1.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-managedbuilder\core\8.1\core-8.1.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall18143524512493748.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-managedbuilder\core\8.1\core-8.1.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-cdt-managedbuilder-gnu-ui-8.1) @ padl-creator-cpp-eclipse ---
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.cdt.managedbuilder.gnu.ui_8.1.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-managedbuilder-gnu\ui\8.1\ui-8.1.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall11907563055007471819.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-cdt-managedbuilder-gnu\ui\8.1\ui-8.1.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-core-jobs-3.5.200.v20120511-1333) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.core.jobs_3.5.200.v20120511-1333.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.core.jobs_3.5.200.v20120511-1333.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\jobs\3.5.200.v20120511-1333\jobs-3.5.200.v20120511-1333.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall8842763801523272164.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\jobs\3.5.200.v20120511-1333\jobs-3.5.200.v20120511-1333.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-core-resources-3.8) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.core.resources_3.8.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.core.resources_3.8.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\resources\3.8\resources-3.8.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall11925735868970975180.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\resources\3.8\resources-3.8.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-core-runtime-3.8) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.core.runtime_3.8.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.core.runtime_3.8.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\runtime\3.8\runtime-3.8.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall11821448165542284042.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-core\runtime\3.8\runtime-3.8.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-equinox-app-1.3) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.equinox.app_1.3.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.equinox.app_1.3.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\app\1.3\app-1.3.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall2770404054697274311.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\app\1.3\app-1.3.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-equinox-common-3.6) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.equinox.common_3.6.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.equinox.common_3.6.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\common\3.6\common-3.6.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall15873458429577416812.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\common\3.6\common-3.6.pom
+[INFO] 
+[INFO] --- install:3.1.1:install-file (install-org-eclipse-equinox-simpleconfigurator-1.3) @ padl-creator-cpp-eclipse ---
+[INFO] pom.xml not found in org.eclipse.equinox.simpleconfigurator_1.3.jar
+[INFO] Installing H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\libs\org.eclipse.equinox.simpleconfigurator_1.3.jar to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\simpleconfigurator\1.3\simpleconfigurator-1.3.jar
+[INFO] Installing C:\Users\ALIAMM~1\AppData\Local\Temp\mvninstall9149638604095672370.pom to C:\Users\Ali Ammar\.m2\repository\padl-creator-cpp-eclipse-org-eclipse-equinox\simpleconfigurator\1.3\simpleconfigurator-1.3.pom
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ padl-creator-cpp-eclipse ---
+[INFO] skip non existing resourceDirectory H:\PROJECTS\Fiverr\CppParserPtidejDemo\PADL Creator C++ (Eclipse)\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ padl-creator-cpp-eclipse ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 60 source files with javac [debug release 25] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ padl-creator-cpp-eclipse ---
+[INFO] Copying 1445 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ padl-creator-cpp-eclipse ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 18 source files with javac [debug release 25] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ padl-creator-cpp-eclipse ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 56.16 s -- in padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Ptidej Tool Suite 1.0.0:
+[INFO] 
+[INFO] Ptidej Tool Suite .................................. SUCCESS [  0.006 s]
+[INFO] CPL ................................................ SUCCESS [  2.351 s]
+[INFO] PADL ............................................... SUCCESS [  0.217 s]
+[INFO] PADL Statements .................................... SUCCESS [  0.861 s]
+[INFO] PADL Creator CPP Eclipse ........................... SUCCESS [01:04 min]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:08 min
+[INFO] Finished at: 2026-03-06T04:34:24+05:00
+[INFO] ------------------------------------------------------------------------

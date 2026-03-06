@@ -121,14 +121,17 @@ Summary of the functional fixes:
 
 ## 6) Verified Test Suites and Current Results
 
-The following suites were run and verified:
+The following suites were rerun in this workspace on 2026-03-06:
 
 1. `TestCreatorCPPFileUsingEclipse`
-   - Results: `Tests run: 13, Failures: 0, Errors: 0, Skipped: 0`
+   - Results: `FAIL` (latest surefire XML shows `tests=14, failures=0, errors=2`)
+   - Main issue: XStream `ConversionException` during model read in large C++ cases (e.g., `ChromeTest`).
    - Log: `test-outputs/TestCreatorCPPFileUsingEclipse.txt`
+   - XML: `PADL Creator C++ (Eclipse)/target/surefire-reports/TEST-padl.creator.cppfile.eclipse.test.TestCreatorCPPFileUsingEclipse.xml`
 
 2. `TestPADLJNI`
-   - Results: `Tests run: 5, Failures: 0, Errors: 0, Skipped: 0`
+   - Results: `FAIL` (`Tests run: 5, Failures: 0, Errors: 5`)
+   - Main issue: XStream `UnknownFieldException` on `padl.cpp.kernel.impl.GlobalFunctionGhost`.
    - Log: `test-outputs/TestPADLJNI.txt`
 
 3. `QMOODMetricsTest`
@@ -163,6 +166,9 @@ All tracked test logs and documentation in this engagement are stored under `tes
 
 ---
 
-## 9) Next Steps (Optional)
+## 9) Next Steps (Required for full green)
 
-If you want a “full-project green build,” you will need to enumerate failing suites from a full `mvn install` run. I can then triage which are true regressions vs. environment-sensitive tests and fix them accordingly.
+To make all three required suites pass consistently on this branch:
+1. Fix binary/model compatibility between generated C++ model snapshots and current PADL C++ classes (`CPPParameter`/`GlobalFunctionGhost` related XStream deserialization path).
+2. Regenerate or migrate stale serialized reference models used by C++/JNI tests.
+3. Re-run the three suites and update `test-outputs/test-run-summary.txt`.
