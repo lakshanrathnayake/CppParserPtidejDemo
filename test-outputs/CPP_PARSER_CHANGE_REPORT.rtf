@@ -1,0 +1,39 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}}
+\fs24
+\b C++ Parser Change Report\par
+\b0
+\par
+Date: 2026-04-10\par
+\par
+\b What the client asked for\par
+\b0
+- keep changes limited to the 2-3 projects directly connected to the C++ parser\par
+- revert unrelated .classpath changes outside that scope\par
+- keep PADL JNI reintegrated\par
+- consider PADL Generator PageRank because it also uses the C++ parser dependency path\par
+- restore test resource paths to the relative ../... form so runs from All Ptidej Tests in Eclipse do not break\par
+\par
+\b What is confirmed locally\par
+\b0
+- RingDaemon test path is restored to ../PADL Creator C++ (Eclipse)/target/test-classes/ring-daemon-master/src/\par
+- PADL JNI test code uses relative ../... resource paths\par
+- the visible source changes are concentrated in parser-adjacent projects\par
+\par
+\b Why GitHub may show only one visible change\par
+\b0
+Part of the request was revert work, especially unrelated .classpath cleanup. Once those files are restored to their original content, they disappear from the Git diff. That means GitHub may only show the few remaining source changes, even though revert work was performed.\par
+\par
+\b Why Eclipse may not show the expected files\par
+\b0
+If a file was changed and then restored, Eclipse and GitHub no longer show it as modified.\par
+If you are viewing a different branch, PR head, or commit than the local branch where work was done, the file list will differ.\par
+\par
+\b About the Eclipse command error\par
+\b0
+The message that tmp_run_padljni_rerun.cmd is not recognized indicates the script was executed from the wrong working directory or without the full path. That is a launch-location problem, not proof that the parser path fix was missing.\par
+\par
+\b Practical conclusion\par
+\b0
+If the client only sees one source file changed on GitHub, the most likely explanation is that the branch or commit being reviewed does not contain every local step, or that much of the requested cleanup was revert work and therefore no longer appears in the final diff.\par
+}
